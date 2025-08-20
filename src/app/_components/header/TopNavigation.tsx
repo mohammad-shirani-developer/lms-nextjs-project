@@ -1,5 +1,5 @@
 "use client";
-import { NavigationMenuItem } from "@/app/types/navigation-menu-item";
+import { NavigationMenuItem } from "@/types/navigation-menu-item";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
