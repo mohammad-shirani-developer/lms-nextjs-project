@@ -8,6 +8,10 @@ const nextConfig: NextConfig = {
                 protocol: 'https',
                 hostname: 'api.classbon.com'
               },
+            {
+                protocol: "https",
+                hostname: "minio-classbon.darkube.app",
+            },
         ]
     }
 };
