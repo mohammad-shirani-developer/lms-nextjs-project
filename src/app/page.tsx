@@ -1,17 +1,16 @@
 import { API_URL } from "@/configs/globals";
 import { homeFeatures } from "@/data/home-features";
+import { testimonials } from "@/data/testimonials";
 import { BlogPostSummary } from "@/types/blog-post-summary.interface";
-import { CourseSummary } from "@/types/course-summary.interface";
+import { Suspense } from "react";
 import BlogPostCardList from "./(blog)/_components/BlogPostCardList";
 import CourseCardList from "./(courses)/_components/CourseCardList";
 import { Button } from "./_components/button";
 import { Feature } from "./_components/feature";
 import HomeHeroSection from "./_components/homeHeroSection/HomeHeroSection";
 import { IconArrowLeftFill } from "./_components/icons/icons";
-import { Suspense } from "react";
 import { CardPlaceholder } from "./_components/placholders";
 import TestimonialList from "./_components/testimonial/TestimonialList";
-import { testimonials } from "@/data/testimonials";
 
 // async function getNewestCourses(count: number): Promise<CourseSummary[]> {
 //   const res = await fetch(`${API_URL}/courses/newest/${count}`, {
@@ -38,7 +37,6 @@ export default async function Home() {
     // newestCoursesData,
     newestBlogPostsData,
   ]);
-  console.log(newestBlogPosts);
 
   return (
     <>
