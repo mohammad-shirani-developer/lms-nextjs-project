@@ -4,7 +4,6 @@ import Price from "@/app/_components/price/Price";
 import { CourseSummary } from "@/types/course-summary.interface";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
 
 export type CourseCardProps = CourseSummary;
 
@@ -49,7 +48,7 @@ const CourseCard = ({
 
       <Link
         className="card-footer animated-icon justify-center"
-        href={`/course/${slug}`}
+        href={`/courses/${slug}`}
       >
         مشاهده جزئیات دوره
         <IconArrowLeftFill fill="currentColor" />
