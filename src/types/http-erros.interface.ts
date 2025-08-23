@@ -1,0 +1,22 @@
+interface Problem {
+  title: string;
+  detail?: string;
+  status: number;
+  errors?: Record<string, string[]>;
+}
+
+interface BadRequestError extends Problem {}
+interface UnauthorizedError extends Problem {}
+interface ValidationError extends Problem {}
+interface NotFoundError extends Problem {}
+interface UnhandledException extends Problem {}
+interface NetworkError extends Problem {}
+
+export type {
+  BadRequestError,
+  NetworkError,
+  NotFoundError,
+  UnauthorizedError,
+  UnhandledException,
+  ValidationError,
+};
