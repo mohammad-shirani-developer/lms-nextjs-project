@@ -1,3 +1,4 @@
+import { Progress } from "@/app/_components/progress";
 import { Rating } from "@/app/_components/rating";
 import { API_URL } from "@/configs/globals";
 import type { CourseDetails } from "@/types/course-details.interface";
@@ -38,6 +39,8 @@ export default async function CourseDetails({
       </div>
       <div className=" col-span-10 xl:col-span-3 ">
         <Rating rate={3} />
+        <Progress value={75} />
+        <Progress value={75} />
       </div>
       <div className=" col-span-10 xl:col-span-6 bg-info"></div>
       <div className=" col-span-10 xl:col-span-4 bg-warning"></div>
