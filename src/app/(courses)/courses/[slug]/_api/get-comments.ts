@@ -19,8 +19,10 @@ const getComments = ({
 
 export const useCourseComment = ({ params }: GetCommentsOptions) => {
   const { data } = useQuery({
-    queryKey: ["corseComment"],
+    queryKey: ["courseComment"],
     queryFn: () => getComments({ params }),
+    staleTime: 5 * 60 * 60 * 1000,
+    gcTime: 6 * 60 * 60 * 1000,
   });
   return { data };
 };
