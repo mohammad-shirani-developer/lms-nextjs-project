@@ -4,6 +4,7 @@ import { API_URL } from "@/configs/globals";
 import { Accordion as AccordionType } from "@/types/accordion";
 import type { CourseDetails } from "@/types/course-details.interface";
 import { Tab } from "@/types/tab.type";
+import CourseComments from "./_components/comments/CourseComments";
 import { CourseAside } from "./_components/course-aside";
 
 export async function generateStaticParams() {
@@ -41,7 +42,7 @@ export default async function CourseDetails({
     },
     {
       label: "دیدگاه‌ها و پرسش",
-      content: "course comments",
+      content: <CourseComments />,
     },
     {
       label: "سوالات متداول",
