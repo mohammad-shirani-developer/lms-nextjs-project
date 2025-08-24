@@ -1,3 +1,4 @@
+import QueryProvider from "@/providers/ReactQueryProvider";
 import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
 import { Footer } from "./_components/footer";
@@ -54,9 +55,11 @@ export default function RootLayout({
       className={`dark ${figtree.variable} ${iranyekan.variable}`}
     >
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto] dark:bg-base-100 dark:text-base-content">
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <QueryProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );
