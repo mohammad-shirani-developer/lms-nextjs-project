@@ -32,7 +32,7 @@ const CourseCard = ({
         <Badge variant="accent">{level}</Badge>
       </div>
       <div className="card-body">
-        <Link href={`/course/${slug}`} className="card-title">
+        <Link href={`/courses/${slug}`} className="card-title">
           {title}
         </Link>
         <p>{subTitle}</p>
