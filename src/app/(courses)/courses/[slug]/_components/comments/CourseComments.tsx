@@ -1,5 +1,6 @@
 "use client";
 
+import { Alert } from "@/app/_components/alert";
 import { Button } from "@/app/_components/button";
 import { Comment } from "@/app/_components/comment";
 import { IconRefresh } from "@/app/_components/icons/icons";
@@ -36,7 +37,7 @@ const CourseComments = () => {
   if (error) {
     return (
       <>
-        <p>خطا در برقراری ارتباط با سرور</p>
+        <Alert variant="error">خطا در برقراری ارتباط با سرور</Alert>
         <div className="text-center mt-3">
           <Button
             variant="neutral"
