@@ -1,6 +1,8 @@
 "use client";
 
+import { Button } from "@/app/_components/button";
 import { Comment } from "@/app/_components/comment";
+import { IconRefresh } from "@/app/_components/icons/icons";
 import { TextPlaceholder } from "@/app/_components/placholders";
 import { useParams } from "next/navigation";
 import { Fragment, useEffect } from "react";
@@ -13,6 +15,7 @@ const CourseComments = () => {
   const {
     data: comments,
     error,
+    isFetching,
     isFetchingNextPage,
     fetchNextPage,
     hasNextPage,
@@ -30,6 +33,26 @@ const CourseComments = () => {
     }
   }, [inView, hasNextPage, fetchNextPage]);
 
+  if (error) {
+    return (
+      <>
+        <p>خطا در برقراری ارتباط با سرور</p>
+        <div className="text-center mt-3">
+          <Button
+            variant="neutral"
+            className="font-semibold"
+            isOutline={true}
+            shape="wide"
+            onClick={() => refetch()}
+          >
+            <IconRefresh />
+            تلاش مجدد
+          </Button>
+        </div>
+      </>
+    );
+  }
+
   return (
     <>
       {comments?.pages.map((currentPage) => (
@@ -44,7 +67,7 @@ const CourseComments = () => {
         </Fragment>
       ))}
 
-      {(isFetchingNextPage || hasNextPage) && (
+      {(isFetching || hasNextPage) && (
         <div ref={ref}>
           <TextPlaceholder />
         </div>
