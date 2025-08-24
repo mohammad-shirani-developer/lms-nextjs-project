@@ -1,5 +1,6 @@
 "use client";
 
+import { Comment } from "@/app/_components/comment";
 import { useParams } from "next/navigation";
 import { useCourseComment } from "../../_api/get-comments";
 
@@ -14,9 +15,7 @@ const CourseComments = () => {
   return (
     <>
       {comments?.data.map((comment) => (
-        <div key={comment.id} className="mb-8">
-          <p>{comment.commentText}</p>
-        </div>
+        <Comment key={`comment-${comment.id}`} {...comment} variant="info" />
       ))}
     </>
   );
