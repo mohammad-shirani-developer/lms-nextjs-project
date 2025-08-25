@@ -1,6 +1,7 @@
 import QueryProvider from "@/providers/ReactQueryProvider";
 import { Figtree } from "next/font/google";
 import localFont from "next/font/local";
+import NextTopLoader from "nextjs-toploader";
 import { Footer } from "./_components/footer";
 import { Header } from "./_components/header";
 import "./globals.css";
@@ -55,6 +56,7 @@ export default function RootLayout({
       className={`dark ${figtree.variable} ${iranyekan.variable}`}
     >
       <body className="min-h-screen grid grid-rows-[80px_1fr_auto] dark:bg-base-100 dark:text-base-content">
+        <NextTopLoader showSpinner={false} color="var(--color-primary)" />
         <QueryProvider>
           <Header />
           <main>{children}</main>
