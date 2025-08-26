@@ -4,7 +4,7 @@ import TopNavigation from "./TopNavigation";
 
 const Header: React.FC = () => {
   return (
-    <header className="border-b dark:border-base-content dark:border-opacity-5">
+    <header className="border-b dark:border-base-content/5">
       <div className="container flex items-center justify-between">
         <Image
           src="/images/logo-light.svg"
